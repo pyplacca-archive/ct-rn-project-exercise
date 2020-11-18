@@ -3,9 +3,6 @@ const globalStyles = {
 	gapNorm: 25,
 	gapMedi: 50,
 	gapMaxi: 100,
-	fszNorm: 16,
-	fszMedi: 22,
-	fszMaxi: 47,
 	primaryColor: '#6C63FF',
 	secColor: '#737373'
 }
