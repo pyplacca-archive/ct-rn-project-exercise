@@ -7,14 +7,13 @@ function Indicators ({total, current, color, style}) {
 		<View style={[styles.container, style]}>
 			{
 				Array(total).fill().map((_, i) => (
-					<TouchableOpacity>
+					<TouchableOpacity key={i}>
 						<Text
 							style={[
-								{backgroundColor: color},
+								{ backgroundColor: color },
 								styles.item,
 								i+1 === current ? styles.active : {}
 							]}
-							key={i}
 						/>
 					</TouchableOpacity>
 				))
@@ -35,11 +34,11 @@ const styles = StyleSheet.create({
 		width: size,
 		opacity: .5,
 		marginHorizontal: 3,
-		borderRadius: size
+		borderRadius: size,
 	},
 
 	active: {
-		width: 20,
+		width: size * 2,
 		opacity: 1,
 	}
 });
