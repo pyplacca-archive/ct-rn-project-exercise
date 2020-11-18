@@ -6,7 +6,9 @@ import utils from '../../utils';
 
 
 function Screen (props) {
-	const {title, subtitle, image=null, buttonText, screenNo, next, prev} = props;
+	const {
+		title, subtitle, image=null, buttonText, screenNo, next, prev
+	} = props;
 
 	return (
 		<View style={styles.container}>
