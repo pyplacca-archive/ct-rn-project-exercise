@@ -12,7 +12,6 @@ function PaymentSuccessful () {
 			buttonText='Get Started'
 			prev='Previous'
 			screenNo={3}
-			// next='Skip'
 		/>
 	)
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import Screen from '../components/onboarding/screen';
-import utils from '../utils'
+import utils from '../utils';
 
 
 function AddToCart () {
@@ -10,8 +10,8 @@ function AddToCart () {
 			subtitle={utils.lorem}
 			image={require('../../assets/images/onboarding/add_to_cart.png')}
 			buttonText='Next'
-			prev='Previous'
 			screenNo={2}
+			prev='Previous'
 			next='Skip'
 		/>
 	)
