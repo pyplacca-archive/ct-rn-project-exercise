@@ -10,16 +10,14 @@ function Screen (props) {
 
 	return (
 		<View style={styles.container}>
-			<View style={styles.top}>
-				<Text style={styles.title}>{title}</Text>
-				<Text style={styles.subtitle}>{subtitle}</Text>
-				<Image source={image} style={styles.image}/>
-				<CustomButton
-					text={buttonText}
-					textStyle={styles.btnText}
-					buttonStyle={styles.btn}
-				/>
-			</View>
+			<Text style={styles.title}>{title}</Text>
+			<Text style={styles.subtitle}>{subtitle}</Text>
+			<Image source={image} style={styles.image}/>
+			<CustomButton
+				text={buttonText}
+				textStyle={styles.btnText}
+				buttonStyle={styles.btn}
+			/>
 			<View style={styles.bottomNav}>
 				{
 					prev &&
@@ -48,19 +46,13 @@ function Screen (props) {
 	)
 };
 
-const {globalStyles: vars} = utils;
+const { globalStyles: vars } = utils;
 
 const styles = StyleSheet.create({
 	container: {
 		paddingVertical: vars.gapMedi - 10,
 		paddingHorizontal: vars.gapMedi - 10,
-		justifyContent: 'space-between',
-		// flex: 1
 		height: '100%',
-	},
-
-	top: {
-		// flex: 1,
 	},
 
 	title: {
@@ -92,7 +84,6 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		minWidth: 130,
 		height: 55,
-		// paddingVertical: vars.gapMini + 5,
 	},
 
 	btnText: {
@@ -108,14 +99,11 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		justifyContent: 'center',
 		alignItems: 'center',
-		width: '100%',
-		// marginTop: '100%'
+		marginTop: 'auto',
 	},
 
 	bottomIndicators: {
 		position: 'absolute',
-		// marginLeft: 'auto',
-		// marginRight: 'auto'
 	},
 
 	bNavText: {
