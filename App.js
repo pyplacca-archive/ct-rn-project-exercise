@@ -1,21 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+// import { StatusBar } from 'expo-status-bar';
+import { StatusBar, StyleSheet, Text, View } from 'react-native';
+import PaymentSuccessful from './resources/screens/payment-successful';
+import AddToCart from './resources/screens/add-to-cart';
+import OnlineShopping from './resources/screens/online-shopping';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+	return (
+		<View style={styles.container}>
+			<StatusBar style="auto" />
+			<PaymentSuccessful />
+		</View>
+	);
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+	container: {
+		flex: 1
+	},
 });
