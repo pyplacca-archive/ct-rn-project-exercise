@@ -3,7 +3,7 @@ import Screen from '../components/onboarding/screen';
 import utils from '../utils';
 
 
-function AddToCart () {
+function AddToCart ({navigation}) {
 	return (
 		<Screen
 			title='Add To Cart'
@@ -12,7 +12,9 @@ function AddToCart () {
 			buttonText='Next'
 			screenNo={2}
 			prev='Previous'
+			// onPrev={() => navigation.navigate('')}
 			next='Skip'
+			// onNext={() => navigation.navigate('')}
 		/>
 	)
 };

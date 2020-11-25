@@ -2,7 +2,7 @@ import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 
 
-function Indicators ({total, current, color, style}) {
+function Indicators ({total=3, current, color, style}) {
 	return (
 		<View style={[styles.container, style]}>
 			{

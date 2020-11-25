@@ -7,7 +7,8 @@ import utils from '../../utils';
 
 function Screen (props) {
 	const {
-		title, subtitle, image=null, buttonText, screenNo, next, prev
+		title, subtitle, image=null, buttonText, screenNo,
+		next, onNext, prev, onPrev
 	} = props;
 
 	return (
@@ -23,25 +24,24 @@ function Screen (props) {
 			<View style={styles.bottomNav}>
 				{
 					prev &&
-					<Text
-						style={[styles.bNavText, styles.bNavPrev]}
-					>
-						{prev}
-					</Text>
+					<CustomButton
+						text={prev}
+						textStyle={[styles.bNavText, styles.bNavPrev]}
+						onPress={onPrev}
+					/>
 				}
 				<Indicators
-					total={3}
 					current={screenNo}
 					color={vars.primaryColor}
 					style={styles.bottomIndicators}
 				/>
 				{
 					next &&
-					<Text
-						style={[ styles.bNavText, styles.bNavNext ]}
-					>
-						{next}
-					</Text>
+					<CustomButton
+						text={next}
+						textStyle={[ styles.bNavText, styles.bNavNext ]}
+						onPress={onNext}
+					/>
 				}
 			</View>
 		</View>

@@ -3,7 +3,7 @@ import Screen from '../components/onboarding/screen';
 import utils from '../utils';
 
 
-function OnlineShopping () {
+function OnlineShopping (props) {
 	return (
 		<Screen
 			title='Online Shopping'
@@ -12,6 +12,7 @@ function OnlineShopping () {
 			screenNo={1}
 			buttonText='Next'
 			next='Skip'
+			// onNext={() => props.navigation.navigate('')}
 		/>
 	)
 };
