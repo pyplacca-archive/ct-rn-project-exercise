@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { StatusBar, View, Text, Image, StyleSheet } from 'react-native';
 import CustomButton from '../button';
 import Indicators from '../indicators';
 import utils from '../../utils';
@@ -8,11 +8,18 @@ import utils from '../../utils';
 function Screen (props) {
 	const {
 		title, subtitle, image=null, buttonText, screenNo,
-		next, onNext, prev, onPrev
+		next, skip, prev
 	} = props;
+
+	const switchScreen = name => {
+		if (name) {
+			props.navigation.navigate(name)
+		}
+	}
 
 	return (
 		<View style={styles.container}>
+			<StatusBar style="auto" />
 			<Text style={styles.title}>{title}</Text>
 			<Text style={styles.subtitle}>{subtitle}</Text>
 			<Image source={image} style={styles.image}/>
@@ -20,15 +27,18 @@ function Screen (props) {
 				text={buttonText}
 				textStyle={styles.btnText}
 				buttonStyle={styles.btn}
+				onPress={() => switchScreen(next)}
 			/>
 			<View style={styles.bottomNav}>
 				{
-					prev &&
+					prev ?
 					<CustomButton
-						text={prev}
-						textStyle={[styles.bNavText, styles.bNavPrev]}
-						onPress={onPrev}
+						text='Previous'
+						textStyle={styles.bNavText}
+						buttonStyle={[styles.bNavBtn, styles.bNavPrev]}
+						onPress={() => switchScreen(prev)}
 					/>
+					: null
 				}
 				<Indicators
 					current={screenNo}
@@ -36,12 +46,14 @@ function Screen (props) {
 					style={styles.bottomIndicators}
 				/>
 				{
-					next &&
+					skip ?
 					<CustomButton
-						text={next}
-						textStyle={[ styles.bNavText, styles.bNavNext ]}
-						onPress={onNext}
+						text='Skip'
+						textStyle={styles.bNavText}
+						buttonStyle={[styles.bNavBtn, styles.bNavNext]}
+						onPress={() => switchScreen(skip)}
 					/>
+					: null
 				}
 			</View>
 		</View>
@@ -55,6 +67,7 @@ const styles = StyleSheet.create({
 		paddingVertical: vars.gapMedi - 10,
 		paddingHorizontal: vars.gapMedi - 10,
 		height: '100%',
+		backgroundColor: '#fff'
 	},
 
 	title: {
@@ -113,12 +126,17 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 	},
 
+	bNavBtn: {
+		paddingVertical: 0,
+		paddingHorizontal: 0,
+	},
+
 	bNavPrev: {
 		marginRight: 'auto'
 	},
 
 	bNavNext: {
-		marginLeft: 'auto'
+		marginLeft: 'auto',
 	}
 })
 
