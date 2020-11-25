@@ -11,8 +11,8 @@ function PaymentSuccessful (props) {
 			image={require('../../assets/images/onboarding/successful_payment.png')}
 			buttonText='Get Started'
 			screenNo={3}
-			prev='Previous'
-			// onPrev={() => props.navigation.navigate('')}
+			prev='add-to-cart'
+			navigation={props.navigation}
 		/>
 	)
 };

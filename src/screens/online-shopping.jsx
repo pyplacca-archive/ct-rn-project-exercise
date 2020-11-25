@@ -11,8 +11,9 @@ function OnlineShopping (props) {
 			image={require('../../assets/images/onboarding/shopping.png')}
 			screenNo={1}
 			buttonText='Next'
-			next='Skip'
-			// onNext={() => props.navigation.navigate('')}
+			next='add-to-cart'
+			skip='payment-successful'
+			navigation={props.navigation}
 		/>
 	)
 };

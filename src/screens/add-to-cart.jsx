@@ -3,7 +3,7 @@ import Screen from '../components/onboarding/screen';
 import utils from '../utils';
 
 
-function AddToCart ({navigation}) {
+function AddToCart (props) {
 	return (
 		<Screen
 			title='Add To Cart'
@@ -11,10 +11,10 @@ function AddToCart ({navigation}) {
 			image={require('../../assets/images/onboarding/add_to_cart.png')}
 			buttonText='Next'
 			screenNo={2}
-			prev='Previous'
-			// onPrev={() => navigation.navigate('')}
-			next='Skip'
-			// onNext={() => navigation.navigate('')}
+			prev='online-shopping'
+			next='payment-successful'
+			skip='payment-successful'
+			navigation={props.navigation}
 		/>
 	)
 };
